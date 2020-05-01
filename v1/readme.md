@@ -22,7 +22,7 @@ Technologies used
 // presetup to use
 1) setup the environment for node.js mysql.
 2) setup the database (SQL_commands.txt).
-3) install the packages from package-lock.json
+3) install the packages from package.json
 4) run the server
 
 
