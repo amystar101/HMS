@@ -1,0 +1,12 @@
+// Theese are the sql commands for setting up mysql database
+
+
+
+create database HMS;
+use HMS;
+create table rooms(room_no int primary key,price int);
+create table rooms_available(room_no int,start int,end int);
+alter table rooms_available add primary key(room_no,start,end);
+create table customers(id_type varchar(100),id_no int,fname varchar(100),lname varchar(100),primary key(id_type,id_no));
+create table bookings(room_no int,start int,end int,id_type varchar(100),id_no int,booking_date varchar(255),primary key(room_no,start,end));
+create table bookingrecords(room_no int,start int,end int,id_type varchar(100),id_no int,booking_date varchar(255),primary key(room_no,start,end));

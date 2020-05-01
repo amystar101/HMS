@@ -1,0 +1,58 @@
+<%- include('partials/top.ejs') %>
+<div class="container">
+    <div>
+        <h2>Booking Section</h2>
+        <form action="/query/book" method="POST">
+            <input type="number" placeholder="no of rooms" required name="no">
+            <input type="text" name="fname" id="" placeholder="First Name" required>
+            <input type="text" name="lname" id="" placeholder="Lase Name" required>
+            <div>
+                <input type="radio" id="aadhar" name="idtype" checked value="aadhar">
+                <label for="aadhar">Aadhar</label>
+            </div>
+            <div>
+                <input type="radio" id="passport" name="idtype" value="passport">
+                <label for="passport">Passport</label>
+            </div>
+            <input type="number" name="idno" required placeholder="ID number">
+            <br>
+            <p>From</p>
+            <input type="date" name="from" required placeholder="check in">
+            <p>TO</p>
+            <input type="date" name="to" required placeholder="check out">
+            <button class="btn btn-success">Book:)</button>
+
+        </form>
+    </div>
+    <div>
+        <h2>Booking Cancelation Section</h2>
+        <form action="/query/cancel" method="POST">
+            <div>
+                <input type="radio" id="aadhar" name="idtype" checked value="aadhar">
+                <label for="aadhar">Aadhar</label>
+            </div>
+            <div>
+                <input type="radio" id="passport" name="idtype" value="passport">
+                <label for="passport">Passport</label>
+            </div>
+            <input type="number" name="idno" required placeholder="ID number">
+
+            <button class="btn btn-danger">Cancel</button>
+
+        </form>
+    </div>
+
+    <div>
+        <h2>Room availability check</h2>
+        <input type="date" name="from" required placeholder="from" id="checkerfrom">
+        <p>TO</p>
+        <input type="date" name="to" required placeholder="to" id="checkerto">
+        <button class="btn btn-primary" onclick=getlist()>Get the list of available rooms</button>
+    </div>
+
+    <h4 id="msg"></h4>
+
+    </ol>
+</div>
+<script src="js/booking.js"></script>
+<%- include('partials/bottom.ejs') %>

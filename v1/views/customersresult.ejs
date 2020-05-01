@@ -1,0 +1,13 @@
+<%- include('partials/top.ejs') %>
+
+<div class="container">
+    <h2>List of those customers are</h2>
+    <ol>
+        <% results.forEach(function(result){ %>
+            <li>
+                <p><%= "ID - "+result.id_type +" ID NO = " + result.id_no + " AND NAME = "+result.fname + " " +result.lname %></p>
+            </li>
+        <% }); %>
+    </ol>
+</div>
+<%- include('partials/bottom.ejs') %>

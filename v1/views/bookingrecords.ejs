@@ -1,0 +1,28 @@
+<%- include('partials/top.ejs') %>
+
+<div class = "container">
+
+    <a href="/query/updatebookingrecords" class="btn btn-primary" >Update Records</a>
+
+    <a href="/query/getbookingrecords" class="btn btn-primary">Get records</a>
+
+
+    <br>
+    <br>
+    <ol>
+        <% results.forEach(function(result){ %>
+            <li>
+                <ul>
+                    <li><%="Room No. -"+result.room_no %></li>
+                    <li><%=result.id_type+" = "+result.id_no %></li>
+                    <li><%="Check in = "+result.start %></li>
+                    <li><%="check out = "+result.end %></li>
+                    <li><%= "Booking Date = "+result.booking_date %></li>
+                    
+                </ul> 
+            </li>
+        <% }); %>
+    </ol>
+
+</div>
+<%- include('partials/bottom.ejs') %>

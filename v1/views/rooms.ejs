@@ -1,0 +1,17 @@
+<%- include('partials/top.ejs') %>
+
+<div class="container">
+    <h2>Booking Results are as</h2>
+
+    <ol>
+        <% results.forEach(function(result){ %>
+            <li>
+                <ul>
+                    <li><%="Room No. -"+result.room_no %></li>
+                    <li><%="Price "+result.price %></li>
+                </ul> 
+            </li>
+        <% }); %>
+    </ol>
+</div>
+<%- include('partials/bottom.ejs') %>
